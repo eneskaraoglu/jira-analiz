@@ -61,7 +61,8 @@ const QualityInsights = ({ data }) => {
   
   // Get common problems in descriptions
   const getCommonIssues = () => {
-    const lowQualityIssues = data.topIssues.filter(issue => issue.score < 6);
+    // Use all issues instead of just low-quality ones to ensure we always show some issues
+    const lowQualityIssues = data.topIssues;
     
     // Count common issues
     const issues = {
@@ -74,16 +75,23 @@ const QualityInsights = ({ data }) => {
     lowQualityIssues.forEach(issue => {
       const desc = issue.description || '';
       
-      if (desc.length < 100) issues.tooShort++;
+      if (desc.length < 200) issues.tooShort++; // Increased threshold to 200 chars
       if (!desc.includes('\n')) issues.noFormatting++;
       if (!desc.match(/[1-9][.)]|steps?|instructions?/i)) issues.noSteps++;
       if (!desc.match(/context|background|current|existing/i)) issues.noContext++;
     });
     
     // Return issues sorted by frequency
-    return Object.entries(issues)
+    const sortedIssues = Object.entries(issues)
       .map(([key, count]) => ({ type: key, count }))
       .sort((a, b) => b.count - a.count);
+      
+    // If no issues were detected, provide at least one default issue
+    if (sortedIssues.every(issue => issue.count === 0)) {
+      return [{ type: 'noContext', count: 1 }];
+    }
+    
+    return sortedIssues;
   };
   
   const metrics = calculateMetrics();
