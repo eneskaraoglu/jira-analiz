@@ -1,0 +1,82 @@
+Key,Summary,Description,Creator,Created
+PROJ-123,"Implement user authentication","We need to add a user authentication system with login, logout, and password reset functionality. The system should use JWT tokens and secure password hashing.
+
+Requirements:
+- Login form with validation
+- Password reset via email
+- Remember me functionality
+- Account lockout after failed attempts","John Doe",2023-01-15T09:30:00.000Z
+PROJ-124,"Fix navbar responsiveness","The navigation bar doesn't work correctly on mobile devices.","Jane Smith",2023-01-16T10:15:00.000Z
+PROJ-125,"Database optimization","The database queries are running slow, especially on the user dashboard. We need to optimize the following queries:
+
+1. User activity history
+2. Dashboard statistics
+3. Report generation
+
+Consider adding indexes for frequently accessed columns and reviewing the join operations in complex queries.","John Doe",2023-01-18T14:22:00.000Z
+PROJ-126,"Update documentation","Update API documentation with new endpoints","Alex Johnson",2023-01-20T11:05:00.000Z
+PROJ-127,"Implement dark mode","Add dark mode support to the application UI. This should include:
+
+- A toggle switch in the user settings
+- Persistent preference saving
+- Appropriate color scheme that meets accessibility standards
+- Automatic switching based on system preferences
+
+The implementation should use CSS variables for easy theming.","Jane Smith",2023-01-22T09:10:00.000Z
+PROJ-128,"Fix login bug","Users report sometimes getting stuck on the login page after entering correct credentials.","Alex Johnson",2023-01-25T16:30:00.000Z
+PROJ-129,"Add export to CSV feature","Users need to be able to export their data to CSV format. This should be available on the reports page and should include options for selecting date ranges and data categories.
+
+Technical details:
+- Use a streaming approach for large datasets
+- Include proper header formatting
+- Handle special characters and escaping
+- Add progress indicator for large exports","John Doe",2023-01-28T13:45:00.000Z
+PROJ-130,"Improve error handling","Improve error handling throughout the application","Alex Johnson",2023-02-01T10:20:00.000Z
+PROJ-131,"Performance optimization for image gallery","The image gallery is loading slowly for users with many images. Implement the following optimizations:
+
+1. Lazy loading for images not in the viewport
+2. Image compression and responsive sizes
+3. Pagination or infinite scrolling instead of loading all at once
+4. Preloading of adjacent images
+
+Also consider using a CDN for faster image delivery and caching.","Jane Smith",2023-02-05T09:30:00.000Z
+PROJ-132,"Update dependencies","Update all npm packages to their latest versions","John Doe",2023-02-10T14:15:00.000Z
+PROJ-133,"Add unit tests for API endpoints","We need comprehensive unit tests for our API endpoints to ensure they work correctly with various inputs and error scenarios. Cover the following areas:
+
+1. Authentication endpoints (login, logout, refresh token)
+2. User management endpoints (create, update, delete)
+3. Data CRUD operations
+4. Error handling and edge cases
+
+Use Jest and Supertest for the testing framework.","Alex Johnson",2023-02-15T11:20:00.000Z
+PROJ-134,"Fix user profile image upload","User profile image upload is not working on Safari browsers.","Jane Smith",2023-02-18T15:45:00.000Z
+PROJ-135,"Implement API rate limiting","Add rate limiting to our API endpoints to prevent abuse and ensure fair usage. Implementation should:
+
+- Use token bucket algorithm
+- Apply different limits for authenticated vs unauthenticated users
+- Include rate limit headers in responses
+- Log excessive usage attempts
+- Provide clear error messages when limits are exceeded
+
+This will help improve overall system stability and security.","John Doe",2023-02-22T09:10:00.000Z
+PROJ-136,"Update privacy policy page","Update the privacy policy page with new GDPR requirements","Sarah Williams",2023-02-25T13:30:00.000Z
+PROJ-137,"Optimize database backups","Current database backup process is taking too long and affecting system performance. Optimize by:
+
+1. Switching to incremental backups on weekdays
+2. Performing full backups only on weekends
+3. Compressing backup files before transferring to storage
+4. Scheduling backups during low-traffic periods
+5. Implementing parallel processing for large tables
+
+Also add monitoring to ensure backups complete successfully and implement alerting for any failures.","John Doe",2023-03-01T10:15:00.000Z
+PROJ-138,"Fix search functionality","The search function is not returning relevant results","Sarah Williams",2023-03-05T16:40:00.000Z
+PROJ-139,"Add multi-language support","Implement multi-language support throughout the application to enhance global accessibility. Requirements:
+
+- Support for English, Spanish, French, German, and Japanese initially
+- Implement i18n framework with JSON-based translation files
+- Add language selector in user settings
+- Auto-detect language based on browser settings
+- Ensure all date, time, currency, and number formats adjust to locale
+- Make sure all UI elements properly handle text expansion for languages that require more space
+
+This is a high priority feature for our Q2 international expansion.","John Doe",2023-03-10T11:25:00.000Z

@@ -1,0 +1,262 @@
+/* App.css - Styling for the CSV analysis application */
+:root {
+  --primary-color: #4a6da7;
+  --secondary-color: #6c8ecc;
+  --accent-color: #324b79;
+  --light-bg: #f5f7fa;
+  --text-color: #333;
+  --border-color: #ddd;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.upload-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.drop-area {
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  padding: 40px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.drop-area:hover {
+  border-color: var(--primary-color);
+  background-color: rgba(74, 109, 167, 0.05);
+}
+
+.drop-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.file-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.or-text {
+  margin: 10px 0;
+  color: #888;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-label {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.file-label:hover {
+  background-color: var(--accent-color);
+}
+
+.selected-file {
+  margin-top: 15px;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.analyze-button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.analyze-button:hover:not(:disabled) {
+  background-color: var(--primary-color);
+}
+
+.analyze-button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: var(--danger-color);
+  margin-top: 15px;
+}
+
+.loading-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.loading-spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid var(--primary-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.results-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.results-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.results-section h3 {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.results-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.chart-container, .table-container {
+  padding: 20px;
+  background-color: var(--light-bg);
+  border-radius: 8px;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.results-table th,
+.results-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.results-table th {
+  background-color: var(--secondary-color);
+  color: white;
+  font-weight: 500;
+}
+
+.results-table tr:hover {
+  background-color: rgba(74, 109, 167, 0.05);
+}
+
+.issues-table-container {
+  margin-top: 40px;
+}
+
+.issues-table {
+  margin-top: 15px;
+}
+
+/* View toggle styles */
+.view-toggle {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 30px;
+}
+
+.view-button {
+  padding: 8px 16px;
+  margin: 0 5px;
+  background-color: #f5f7fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.view-button:hover {
+  background-color: rgba(74, 109, 167, 0.1);
+}
+
+.view-button.active {
+  background-color: #4a6da7;
+  color: white;
+  border-color: #4a6da7;
+}
+
+@media (max-width: 768px) {
+  .results-container {
+    grid-template-columns: 1fr;
+  }
+}
